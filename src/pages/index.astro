@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../content/site';
+import { withBase } from '../lib/url';
+---
+
+<BaseLayout>
+  <nav class="topnav">
+    <a href={withBase('/blog')}>Blog</a>
+  </nav>
+
+  <header>
+    <div class="photo">
+      <!-- swap for a real photo: set `photoSrc` in src/content/site.ts -->
+      {site.photoSrc && <img src={site.photoSrc} alt={site.photoAlt} />}
+    </div>
+    <h1>{site.name}</h1>
+  </header>
+
+  {site.intro.map((paragraph) => (
+    <p set:html={paragraph} />
+  ))}
+
+  <p class="muted" set:html={site.introMuted} />
+
+  <p set:html={site.introClosing} />
+
+  <hr />
+
+  <h2>Some things I've built</h2>
+
+  {site.projects.map((project) => (
+    <div class="work-line">
+      <a href={project.url}>{project.name}</a> — {project.description}
+      <div class="stack">{project.stack}</div>
+    </div>
+  ))}
+
+  <hr />
+
+  <h2>Where I've worked</h2>
+
+  {site.workHistory.map((role) => (
+    <div class="role-line">
+      {role.title}, {role.company} <span class="when">— {role.when}</span>
+    </div>
+  ))}
+  <p style="margin-top:16px;"><a href={withBase(site.resumeHref)} download>Full résumé (PDF)</a></p>
+
+  <hr />
+
+  <div class="links">
+    {site.contactLinks.map((link) => (
+      <a href={link.href}>{link.label}</a>
+    ))}
+  </div>
+
+  <footer>{site.footer.tagline}<br />{site.footer.copyright}</footer>
+</BaseLayout>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 40px;
+  }
+  .photo {
+    flex: 0 0 auto;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--line);
+    overflow: hidden;
+  }
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .work-line,
+  .role-line {
+    margin-bottom: 14px;
+  }
+  .work-line .stack,
+  .role-line .when {
+    color: var(--muted);
+    font-size: 13.5px;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    font-size: 14.5px;
+  }
+</style>

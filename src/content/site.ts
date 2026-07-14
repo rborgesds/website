@@ -1,12 +1,30 @@
 // Edit this file to update your bio, projects, work history, and links.
-// No markup/build-script changes needed for routine content updates.
+// No markup changes needed for routine content updates.
 
-module.exports = {
+export interface Project {
+  name: string;
+  url: string;
+  description: string;
+  stack: string;
+}
+
+export interface Role {
+  title: string;
+  company: string;
+  when: string;
+}
+
+export interface ContactLink {
+  label: string;
+  href: string;
+}
+
+export const site = {
   name: 'Rodrigo',
 
   // Swap for a real photo: put the image in /public and set photoSrc,
   // e.g. photoSrc: '/you.jpg'. Leave null to keep the placeholder circle.
-  photoSrc: null,
+  photoSrc: null as string | null,
   photoAlt: 'Rodrigo',
 
   intro: [
@@ -41,13 +59,13 @@ module.exports = {
       description: 'one line on what it does.',
       stack: 'Stack',
     },
-  ],
+  ] satisfies Project[],
 
   workHistory: [
     { title: 'Senior Software Engineer', company: '[Company]', when: '2022–now' },
     { title: 'Software Engineer', company: '[Company]', when: '2019–2022' },
     { title: 'Software Engineer', company: '[Company]', when: '2017–2019' },
-  ],
+  ] satisfies Role[],
 
   // Placeholder PDF lives at /public/resume.pdf — replace with your real résumé.
   resumeHref: '/resume.pdf',
@@ -56,7 +74,7 @@ module.exports = {
     { label: 'Email', href: 'mailto:hello@rodrigo.dev' },
     { label: 'GitHub', href: '#' },
     { label: 'LinkedIn', href: '#' },
-  ],
+  ] satisfies ContactLink[],
 
   footer: {
     tagline: 'Built with a monospace font and too much coffee.',
@@ -72,8 +90,6 @@ module.exports = {
   },
 
   seo: {
-    // Update once the Cloudflare Pages project / custom domain is known.
-    siteUrl: 'https://rodrigo-website.pages.dev',
     defaultTitle: 'Rodrigo — Software Engineer',
     defaultDescription:
       'Rodrigo is a software engineer based in Sydney, building privacy-first software and writing about code.',
