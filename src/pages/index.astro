@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../content/site';
+import { withBase } from '../lib/url';
 ---
 
 <BaseLayout>
   <nav class="topnav">
-    <a href="/blog">Blog</a>
+    <a href={withBase('/blog')}>Blog</a>
   </nav>
 
   <header>
@@ -44,7 +45,7 @@ import { site } from '../content/site';
       {role.title}, {role.company} <span class="when">— {role.when}</span>
     </div>
   ))}
-  <p style="margin-top:16px;"><a href={site.resumeHref} download>Full résumé (PDF)</a></p>
+  <p style="margin-top:16px;"><a href={withBase(site.resumeHref)} download>Full résumé (PDF)</a></p>
 
   <hr />
 
