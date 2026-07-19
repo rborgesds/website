@@ -31,7 +31,7 @@ import { withBase } from '../lib/url';
 
   {site.projects.map((project) => (
     <div class="work-line">
-      <a href={project.url}>{project.name}</a> — {project.description}
+      <a href={project.url} target="_blank">{project.name}</a> — {project.description}
       <div class="stack">{project.stack}</div>
     </div>
   ))}
@@ -51,11 +51,9 @@ import { withBase } from '../lib/url';
 
   <div class="links">
     {site.contactLinks.map((link) => (
-      <a href={link.href}>{link.label}</a>
+      <a href={link.href} target="_blank">{link.label}</a>
     ))}
   </div>
-
-  <footer>{site.footer.tagline}<br />{site.footer.copyright}</footer>
 </BaseLayout>
 
 <style>

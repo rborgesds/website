@@ -50,6 +50,7 @@ const ogImageURL = new URL(withBase(ogImage), Astro.site);
 <body>
   <div class="wrap">
     <slot />
+    <footer>{site.footer.tagline}</footer>
   </div>
 </body>
 </html>
@@ -146,5 +147,5 @@ const ogImageURL = new URL(withBase(ogImage), Astro.site);
     margin-top: 48px;
     font-size: 13px;
     color: var(--muted);
-  }
+    text-align: center;
 </style>
