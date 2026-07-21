@@ -31,7 +31,7 @@ import { withBase } from '../lib/url';
 
   {site.projects.map((project) => (
     <div class="work-line">
-      <a href={project.url} target="_blank">{project.name}</a> — {project.description}
+      {project.wip && <span class="wip-tag">WIP</span>}{project.url ? <a href={project.url} target="_blank">{project.name}</a> : project.name} — {project.description}
       <div class="stack">{project.stack}</div>
     </div>
   ))}
@@ -81,6 +81,17 @@ import { withBase } from '../lib/url';
   .work-line,
   .role-line {
     margin-bottom: 14px;
+  }
+  .wip-tag {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 0 5px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    vertical-align: 1px;
   }
   .work-line .stack,
   .role-line .when {

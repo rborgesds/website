@@ -3,9 +3,12 @@
 
 export interface Project {
   name: string;
-  url: string;
+  // Omit `url` to render the project name as plain text (no link).
+  url?: string;
   description: string;
   stack: string;
+  // Set to true to show a "WIP" tag for projects still in progress.
+  wip?: boolean;
 }
 
 export interface Role {
@@ -50,18 +53,20 @@ export const site = {
     },
     {
       name: "Role Pilot",
-      url: "#",
+      // WIP — no link yet, rendered as plain text. Add `url` when it's live.
       description:
         "a privacy-first CLI that scores job postings against your profile using a deterministic heuristic plus LLM-assisted analysis, and exports a ranked apply-list to Obsidian.",
       stack: "Bun, TypeScript, CAC, Zod, LLM API ",
+      wip: true,
     },
     {
       name: "Pathway OS",
-      url: "#",
+      // WIP — no link yet, rendered as plain text. Add `url` when it's live.
       description:
         "a goal-first migration planning tool that recommends the best pathway to Australian PR based on a user's profile, with confidence scoring and timeline estimates.",
       stack:
         "Node.js, TypeScript, NestJS, PostgreSQL, Drizzle ORM, better-auth, Docker",
+      wip: true,
     },
   ] satisfies Project[],
 
