@@ -33,17 +33,20 @@ export const site = {
   photoAlt: "Rodrigo",
 
   intro: [
-    "Hey, I'm Rodrigo — a software engineer based in Sydney, originally from Brazil. I've spent 7+ years writing backend and full-stack software.",
-    'Right now I\'m building <a href="https://usedrop.co" target="_blank">Drop</a>, a privacy-first file-sharing app, mostly working alongside AI coding agents to see how far that workflow actually goes.',
+    "Hey, I'm Rodrigo. Software engineer based in Sydney, originally from Brazil.",
+    "I got into this when I was around 11, running private Tibia and Ragnarok servers from my bedroom. Setting up databases, scripting game logic, building websites, managing servers. At some point the Ragnarok server got popular enough that I was making money from it, which convinced my mum I was some kind of computer genius.",
+    "Twenty years later I'm still doing roughly the same thing, just at a different scale.",
+    'I care a lot about privacy, not as a feature but as a default. Big companies sitting on mountains of our data makes me uneasy, so I try to build software that doesn\'t do that. Right now that means <a href="https://usedrop.co" target="_blank">Drop</a>, a file-sharing app that encrypts everything in your browser before it ever leaves your device.',
+    "These days I mostly work alongside AI coding agents and I'm genuinely curious how far that workflow goes.",
   ],
 
   // Rendered with the muted/secondary color.
   introMuted:
-    "Outside of code I bartend on weekends and cook things that take longer than they should. Always mid-way through learning something new.",
+    "Outside of code I bartend on weekends and cook things that take longer than they should.",
 
   // Rendered after the muted paragraph, normal color.
   introClosing:
-    'Open to senior engineering roles and freelance work — <a href="mailto:santos.rodri@proton.me">reach out</a> if something fits.',
+    'Open to senior engineering roles and freelance work. <a href="mailto:santos.rodri@proton.me">Reach out</a> if something fits.',
 
   projects: [
     {
