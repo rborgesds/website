@@ -129,7 +129,7 @@ export const site = {
   },
 
   seo: {
-    defaultTitle: "Rodrigo — Software Engineer",
+    defaultTitle: "Rodrigo Santos — Software Engineer",
     defaultDescription:
       "Rodrigo is a software engineer based in Sydney, building privacy-first software and writing about code.",
     // Placeholder — replace with a real 1200x630 image in /public.
