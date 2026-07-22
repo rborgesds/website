@@ -45,6 +45,7 @@ import { withBase } from '../lib/url';
   {site.workHistory.map((role) => (
     <div class="role-line">
       {role.title}, {role.company} <span class="when">— {role.when}</span>
+      {role.description && <div class="role-desc">{role.description}</div>}
     </div>
   ))}
   <p style="margin-top:16px;"><a href={withBase(site.resumeHref)} download>Full résumé (PDF)</a></p>
@@ -83,6 +84,15 @@ import { withBase } from '../lib/url';
   .work-line,
   .role-line {
     margin-bottom: 14px;
+  }
+  .role-line {
+    margin-bottom: 20px;
+  }
+  .role-desc {
+    margin-top: 4px;
+    max-width: 56ch;
+    color: var(--muted);
+    font-size: 13.5px;
   }
   .wip-tag {
     display: inline-block;

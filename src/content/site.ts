@@ -15,6 +15,8 @@ export interface Role {
   title: string;
   company: string;
   when: string;
+  // One-liner about the role. Omit to show just the title/company/date.
+  description?: string;
 }
 
 export interface ContactLink {
@@ -75,17 +77,29 @@ export const site = {
       title: "Senior Software Engineer",
       company: "Housi",
       when: "2020-2022",
+      description:
+        "Proptech startup scaling flexible housing across Brazil — engineered the entire microservices backend and production cloud infrastructure from scratch, including the payment and subscription system powering every booking on the platform.",
     },
     {
       title: "Mid Software Engineer",
       company: "Magazine Luiza",
       when: "2019-2020",
+      description:
+        "One of Brazil's largest retailers — maintained the API gateway and catalogue APIs processing millions of daily requests across multiple product squads.",
     },
-    { title: "Mid Software Engineer", company: "WTT", when: "2018-2019" },
+    {
+      title: "Mid Software Engineer",
+      company: "WTT",
+      when: "2018-2019",
+      description:
+        "Medical imaging software company — led a full redesign of a legacy system, rebuilding the architecture from scratch and mentoring a team of 4.",
+    },
     {
       title: "Full-stack Software Engineer",
       company: "Betalabs",
       when: "2015-2018",
+      description:
+        "SaaS platform for ecommerce — built REST APIs, payment gateway and marketplace integrations, and helped rebuild the company's core product end-to-end.",
     },
   ] satisfies Role[],
 
