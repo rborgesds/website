@@ -27,6 +27,11 @@ const ogImageURL = new URL(withBase(ogImage), Astro.site);
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalURL} />
 
+  <!-- Favicons -->
+  <link rel="icon" href={withBase('/favicon.ico')} sizes="any" />
+  <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
+  <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} />
+
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
