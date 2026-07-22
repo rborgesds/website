@@ -22,6 +22,9 @@ export interface Role {
 export interface ContactLink {
   label: string;
   href: string;
+  // Icon key: "email" | "github" | "linkedin". Falls back to the label
+  // text if the key isn't in the icon set in index.astro.
+  icon?: string;
 }
 
 export const site = {
@@ -110,9 +113,9 @@ export const site = {
   resumeHref: "/rodrigo-santos-resume.pdf",
 
   contactLinks: [
-    { label: "Email", href: "mailto:santos.rodri@proton.me" },
-    { label: "GitHub", href: "https://github.com/rborgesds" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/rborgesds" },
+    { label: "Email", href: "mailto:santos.rodri@proton.me", icon: "email" },
+    { label: "GitHub", href: "https://github.com/rborgesds", icon: "github" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/rborgesds", icon: "linkedin" },
   ] satisfies ContactLink[],
 
   footer: {
