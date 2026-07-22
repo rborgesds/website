@@ -25,7 +25,7 @@ export interface ContactLink {
 }
 
 export const site = {
-  name: "Rodrigo",
+  name: "Rodrigo Santos",
 
   // Swap for a real photo: put the image in /public and set photoSrc,
   // e.g. photoSrc: '/you.jpg'. Leave null to keep the placeholder circle.
