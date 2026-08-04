@@ -49,7 +49,7 @@ export const site = {
 
   // Rendered after the muted paragraph, normal color.
   introClosing:
-    'Open to senior engineering roles and freelance work. <a href="mailto:santos.rodri@proton.me">Reach out</a> if something fits.',
+    'Open to senior engineering roles and freelance work. <a href="mailto:hey@rodrigos.me">Reach out</a> if something fits.',
 
   projects: [
     {
@@ -113,9 +113,13 @@ export const site = {
   resumeHref: "/rodrigo-santos-resume.pdf",
 
   contactLinks: [
-    { label: "Email", href: "mailto:santos.rodri@proton.me", icon: "email" },
+    { label: "Email", href: "mailto:hey@rodrigos.me", icon: "email" },
     { label: "GitHub", href: "https://github.com/rborgesds", icon: "github" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/rborgesds", icon: "linkedin" },
+    {
+      label: "LinkedIn",
+      href: "https://linkedin.com/in/rborgesds",
+      icon: "linkedin",
+    },
   ] satisfies ContactLink[],
 
   footer: {
@@ -132,7 +136,7 @@ export const site = {
   },
 
   seo: {
-    defaultTitle: "Rodrigo Santos — Software Engineer",
+    defaultTitle: "Rodrigo Santos",
     defaultDescription:
       "Rodrigo is a software engineer based in Sydney, building privacy-first software and writing about code.",
     // Placeholder — replace with a real 1200x630 image in /public.
