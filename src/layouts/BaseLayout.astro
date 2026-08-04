@@ -68,6 +68,14 @@ const ogImageURL = new URL(withBase(ogImage), Astro.site);
     font-display: swap;
     src: url('/fonts/newsreader-400.woff2') format('woff2');
   }
+  /* Slightly heavier cut, used only on low-DPI screens (see media query below) */
+  @font-face {
+    font-family: 'Newsreader';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/newsreader-500.woff2') format('woff2');
+  }
   /* Heading font */
   @font-face {
     font-family: 'Fraunces';
@@ -105,6 +113,17 @@ const ogImageURL = new URL(withBase(ogImage), Astro.site);
     font-size: 18px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+  }
+
+  /*
+   * On low-DPI screens (most Windows/Linux desktops at 1x) the thin serif
+   * strokes render harshly, so nudge the body to a slightly heavier cut.
+   * Retina / high-DPI displays (Macs, 4K, phones) are excluded and keep 400.
+   */
+  @media (max-resolution: 1.5dppx) {
+    body {
+      font-weight: 500;
+    }
   }
 
   a {
