@@ -45,12 +45,9 @@ const ogImageURL = new URL(withBase(ogImage), Astro.site);
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={ogImageURL} />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap"
-    rel="stylesheet"
-  />
+  <!-- Self-hosted fonts (no render-blocking third-party request) -->
+  <link rel="preload" href={withBase('/fonts/commit-mono-400.woff2')} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={withBase('/fonts/jetbrains-mono-700.woff2')} as="font" type="font/woff2" crossorigin />
 </head>
 <body>
   <div class="wrap">
@@ -61,6 +58,30 @@ const ogImageURL = new URL(withBase(ogImage), Astro.site);
 </html>
 
 <style is:global>
+  /* Body font */
+  @font-face {
+    font-family: 'Commit Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/commit-mono-400.woff2') format('woff2');
+  }
+  /* Heading font */
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/jetbrains-mono-400.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/jetbrains-mono-700.woff2') format('woff2');
+  }
+
   :root {
     --bg: #FAFAF7;
     --ink: #16181D;
@@ -78,7 +99,7 @@ const ogImageURL = new URL(withBase(ogImage), Astro.site);
     margin: 0;
     background: var(--bg);
     color: var(--ink);
-    font-family: 'Fira Code', monospace;
+    font-family: 'Commit Mono', monospace;
     font-size: 16px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
@@ -153,4 +174,5 @@ const ogImageURL = new URL(withBase(ogImage), Astro.site);
     font-size: 13px;
     color: var(--muted);
     text-align: center;
+  }
 </style>
