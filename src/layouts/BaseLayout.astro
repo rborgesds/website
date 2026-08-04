@@ -46,12 +46,14 @@ const ogImageURL = new URL(withBase(ogImage), Astro.site);
   <meta name="twitter:image" content={ogImageURL} />
 
   <!-- Self-hosted fonts (no render-blocking third-party request) -->
-  <link rel="preload" href={withBase('/fonts/commit-mono-400.woff2')} as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href={withBase('/fonts/jetbrains-mono-700.woff2')} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={withBase('/fonts/newsreader-400.woff2')} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={withBase('/fonts/fraunces-600.woff2')} as="font" type="font/woff2" crossorigin />
 </head>
 <body>
   <div class="wrap">
-    <slot />
+    <main>
+      <slot />
+    </main>
     <footer>{site.footer.tagline}</footer>
   </div>
 </body>
@@ -60,26 +62,26 @@ const ogImageURL = new URL(withBase(ogImage), Astro.site);
 <style is:global>
   /* Body font */
   @font-face {
-    font-family: 'Commit Mono';
+    font-family: 'Newsreader';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('/fonts/commit-mono-400.woff2') format('woff2');
+    src: url('/fonts/newsreader-400.woff2') format('woff2');
   }
   /* Heading font */
   @font-face {
-    font-family: 'JetBrains Mono';
+    font-family: 'Fraunces';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('/fonts/jetbrains-mono-400.woff2') format('woff2');
+    src: url('/fonts/fraunces-400.woff2') format('woff2');
   }
   @font-face {
-    font-family: 'JetBrains Mono';
+    font-family: 'Fraunces';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     font-display: swap;
-    src: url('/fonts/jetbrains-mono-700.woff2') format('woff2');
+    src: url('/fonts/fraunces-600.woff2') format('woff2');
   }
 
   :root {
@@ -99,7 +101,7 @@ const ogImageURL = new URL(withBase(ogImage), Astro.site);
     margin: 0;
     background: var(--bg);
     color: var(--ink);
-    font-family: 'Commit Mono', monospace;
+    font-family: 'Newsreader', Georgia, serif;
     font-size: 16px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
@@ -141,9 +143,9 @@ const ogImageURL = new URL(withBase(ogImage), Astro.site);
   }
 
   h1 {
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 700;
-    font-size: 1.15rem;
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.35rem;
     margin: 0;
   }
 
@@ -162,9 +164,9 @@ const ogImageURL = new URL(withBase(ogImage), Astro.site);
   }
 
   h2 {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Fraunces', Georgia, serif;
     font-weight: normal;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     color: var(--muted);
     margin: 0 0 16px;
   }
