@@ -124,12 +124,10 @@ export const site = {
 
   footer: {
     tagline: "Crafted with ☕️",
-    copyright: "© Rodrigo Santos",
   },
 
   blog: {
     feedUrl: "https://rborgesds.substack.com/feed",
-    substackUrl: "https://rborgesds.substack.com",
     intro:
       'Notes on code, side projects, and whatever else I\'m figuring out. Full posts live on <a href="https://rborgesds.substack.com" target="_blank" rel="noopener">Substack</a>.',
     emptyState: "Posts coming soon.",

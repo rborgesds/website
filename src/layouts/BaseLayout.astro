@@ -46,7 +46,7 @@ const ogImageURL = new URL(withBase(ogImage), Astro.site);
   <meta name="twitter:image" content={ogImageURL} />
 
   <!-- Self-hosted fonts (no render-blocking third-party request) -->
-  <link rel="preload" href={withBase('/fonts/newsreader-var.woff2')} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={withBase('/fonts/newsreader-400.woff2')} as="font" type="font/woff2" crossorigin />
   <link rel="preload" href={withBase('/fonts/fraunces-600.woff2')} as="font" type="font/woff2" crossorigin />
 </head>
 <body>
@@ -60,13 +60,13 @@ const ogImageURL = new URL(withBase(ogImage), Astro.site);
 </html>
 
 <style is:global>
-  /* Body font (variable weight axis, 400-700) */
+  /* Body font */
   @font-face {
     font-family: 'Newsreader';
     font-style: normal;
-    font-weight: 400 700;
+    font-weight: 400;
     font-display: swap;
-    src: url('/fonts/newsreader-var.woff2') format('woff2');
+    src: url('/fonts/newsreader-400.woff2') format('woff2');
   }
   /* Heading font */
   @font-face {
