@@ -107,17 +107,6 @@ const ogImageURL = new URL(withBase(ogImage), Astro.site);
     -webkit-font-smoothing: antialiased;
   }
 
-  /*
-   * On low-DPI screens (most Windows/Linux desktops at 1x) the thin serif
-   * strokes render harshly, so nudge the body to a slightly heavier cut.
-   * Retina / high-DPI displays (Macs, 4K, phones) are excluded and keep 400.
-   */
-  @media (max-resolution: 1.5dppx) {
-    body {
-      font-weight: 450;
-    }
-  }
-
   a {
     color: var(--ink);
     text-decoration: underline;
